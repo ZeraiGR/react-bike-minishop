@@ -1,0 +1,91 @@
+.card {
+	position: relative;
+	padding: 30px 29px 35px;
+	border: 1px solid #f3f3f3;
+	border-radius: 40px;
+	transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+	&:hover {
+		box-shadow: 0 14px 30px rgba(0, 0, 0, 0.05);
+		transform: translateY(-10px);
+	}
+
+	img {
+		margin-bottom: 14px;
+		max-width: 100%;
+	}
+}
+
+.like {
+	position: absolute;
+	top: 30px;
+	left: 30px;
+	width: 30px;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid #f8f8f8;
+	border-radius: 7px;
+
+	svg {
+		width: 15px;
+		height: 13.3px;
+	}
+
+	&.likeActive {
+		background-color: #fef0f0;
+		border-color: #fef0f0 ;
+
+		svg {
+			stroke: transparent;
+			fill: #ff8585;
+		}
+	}
+}
+
+.title {
+	margin-bottom: 14px;
+	line-height: 1.2;
+}
+
+.add {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 32px;
+	height: 32px;
+	border: 1px solid #f2f2f2;
+	border-radius: 8px;
+
+	svg {
+		width: 11px;
+		height: 11px;
+	}
+
+	&.addActive {
+		background: linear-gradient(180deg, #89F09C 0%, #3CC755 100%);
+
+		svg {
+			width: 10.67px;
+			height: 8.51px;
+		}
+	}
+
+}
+
+.bottom {
+	display: flex;
+	justify-content: space-between;
+}
+
+.price {
+	display: flex;
+	flex-direction: column;
+
+	span {
+		margin-bottom: 5px;
+		text-transform: uppercase;
+		color: #bdbdbd;
+	}
+}

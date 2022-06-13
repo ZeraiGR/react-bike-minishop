@@ -1,44 +1,46 @@
-
+import Header from "./components/Header";
+import Drawer from "./components/Drawer";
+import Promo from "./components/Promo/Promo";
+import Goods from "./components/Goods";
+import { useState, useEffect } from "react";
 
 function App() {
+	const [items, setItems] = useState([]);
+	const [cartItems, setCartItems] = useState([]);
+	const [drawerState, setDrawerState] = useState(false);
+
+	// Получаем данные с сервера
+	useEffect(() => {
+		fetch('https://62a70a9897b6156bff85c96f.mockapi.io/items')
+		.then(response => response.json())
+		.then((items) => setItems(items))
+	}, []);
+
+	const cartStatusHandler = (id) => {
+		const updatedItems = items.map(item => item.id === id ? {...item, isCart: !item.isCart} : item);
+		setItems(updatedItems);
+		
+		const isCartItems = updatedItems.filter(item => item.isCart); 
+		setCartItems(isCartItems);
+	};
+
+	const likeStatusHandler = (id) => {
+		const updatedItems = items.map(item => item.id === id ? {...item, isLiked: !item.isLiked} : item);
+		setItems(updatedItems);
+	};
+
+	const switchDrawerHandler = () => {
+		setDrawerState(prev => !prev);
+	};
+
   return (
     <div className="wrapper">
-			<header className="header">
-					<nav className="header__nav">
-						<a className="logo" href="#">
-							<img src="/img/logo.png" alt="logo" />
-							
-							<div className="logo__title">
-								<strong>REACT SNEAKERS</strong>
-								<span>Магазин лучших кроссовок</span>
-							</div>
-						</a>
-						<ul className="header__menu">
-							<li>
-								<button className="header__cart" type="button">
-									
-									1205 руб.
-							 	</button>
-							</li>
-							 <li>
-									<a className="header__link header__link--favorite" href="#">
-										<span className="sr-only">Избранное</span>
-									</a>
-							 </li>
-							 <li>
-									<a className="header__link header__link--user" href="#">
-										<span className="sr-only">Профиль</span>
-									</a>
-							 </li>
-						</ul>
-					</nav>
-			</header>
+			<Header onOpenDrawer={switchDrawerHandler} />
+			<Drawer drawerState={drawerState} cartItems={cartItems} onCloseDrawer={switchDrawerHandler} onCartRemove={cartStatusHandler} />
 
-			<section className="promo">
-				<div className="promo__container">
-
-				</div>
-			</section>
+			<Promo/>
+			
+			<Goods items={items} onCartStatus={cartStatusHandler} onLikeStatus={likeStatusHandler} />
     </div>
   );
 }

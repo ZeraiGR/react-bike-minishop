@@ -1,0 +1,16 @@
+.goods {
+	padding: 40px 0;
+}
+
+.list {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 40px;
+}
+
+.top {
+	margin-bottom: 40px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
