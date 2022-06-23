@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-bike-minishop/static/css/main.95103c52.css",
+    "main.js": "/react-bike-minishop/static/js/main.bdc53a11.js",
+    "index.html": "/react-bike-minishop/index.html",
+    "main.95103c52.css.map": "/react-bike-minishop/static/css/main.95103c52.css.map",
+    "main.bdc53a11.js.map": "/react-bike-minishop/static/js/main.bdc53a11.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.95103c52.css",
+    "static/js/main.bdc53a11.js"
+  ]
+}
