@@ -15,7 +15,7 @@ export const Cart = ({onCartRemove, title, imageUrl, price}) => {
 			
 			<button className={styles.remove} type="button" onClick={onCartRemove}>
 				<svg>
-					<use href="/img/sprite.svg#icon-add"></use>
+					<use href="img/sprite.svg#icon-add"></use>
 				</svg>
 				<span className="sr-only">Удалить из корзины</span>
 			</button>

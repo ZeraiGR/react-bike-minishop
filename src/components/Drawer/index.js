@@ -50,7 +50,7 @@ export const Drawer = ({cartItems, onCloseDrawer, onCartRemove, isDrawerOpen, is
 					<h2 className={styles.title}>Корзина</h2>
 					<button className={styles.remove} type="button" onClick={isOrderComplete ? () => onCloseDrawer(isOrderComplete, setIsOrderComplete) : onCloseDrawer}>
 						<svg>
-							<use href="/img/sprite.svg#icon-add"></use>
+							<use href="img/sprite.svg#icon-add"></use>
 						</svg>
 						<span className="sr-only">Закрыть корзину</span>
 					</button>
@@ -88,7 +88,7 @@ export const Drawer = ({cartItems, onCloseDrawer, onCartRemove, isDrawerOpen, is
 					</>
 				) : (
 					<InfoBlock 
-						img={isOrderComplete ? "/img/order-complete.jpg" : "/img/empty-box.png"}
+						img={isOrderComplete ? "img/order-complete.jpg" : "img/empty-box.png"}
 						title={isOrderComplete ? "Заказ оформлен!" : "Корзина пустая"} 
 						descr={isOrderComplete ? `Ваш заказ #${orderId} скоро будет передан курьерской доставке` : 
 						"Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ."}

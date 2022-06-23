@@ -8,7 +8,7 @@ export const Button = ({title, iconPosition, onClick, type, hasIcon = true}) => 
 			<span>{title}</span>
 			{ hasIcon && 
 				<svg>
-					<use href="/img/sprite.svg#icon-arrow"></use>
+					<use href="img/sprite.svg#icon-arrow"></use>
 				</svg>
 			}
 		</Link> :
@@ -16,7 +16,7 @@ export const Button = ({title, iconPosition, onClick, type, hasIcon = true}) => 
 			<span>{title}</span>
 			{ hasIcon && 
 				<svg>
-					<use href="/img/sprite.svg#icon-arrow"></use>
+					<use href="img/sprite.svg#icon-arrow"></use>
 				</svg>
 			}
 		</button>

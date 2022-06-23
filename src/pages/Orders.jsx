@@ -25,7 +25,7 @@ export const Orders = ({orderItems, isLoading}) => {
 					<div className={`${styles.top} ${styles.favorite}`}>
 						<Link className={styles.backLink} to="/">
 							<svg className="icon">
-								<use href="/img/sprite.svg#icon-angle-left"></use>
+								<use href="img/sprite.svg#icon-angle-left"></use>
 							</svg>
 						</Link>
 						<h1 className="title">Мои покупки</h1>
@@ -33,7 +33,7 @@ export const Orders = ({orderItems, isLoading}) => {
 					{!isLoading && orderItems.length === 0 ?
 						<div className={styles.emptyList}>
 							<InfoBlock 
-								img="/img/sad-smile.png"
+								img="img/sad-smile.png"
 								title="У вас нет заказов"
 								descr="Оформите хотя бы один заказ."
 								btnTitle="Вернуться назад"

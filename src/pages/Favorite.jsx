@@ -30,7 +30,7 @@ export const Favorite = ({favoriteItems, cartItems, onCartToggler, onLikeToggler
 					<div className={`${styles.top} ${styles.favorite}`}>
 						<Link className={styles.backLink} to="/">
 							<svg className="icon">
-								<use href="/img/sprite.svg#icon-angle-left"></use>
+								<use href="img/sprite.svg#icon-angle-left"></use>
 							</svg>
 						</Link>
 						<h1 className="title">Мои закладки</h1>
@@ -39,7 +39,7 @@ export const Favorite = ({favoriteItems, cartItems, onCartToggler, onLikeToggler
 					{!isLoading && favoriteItems.length === 0 ? 
 						<div className={styles.emptyList}>
 							<InfoBlock 
-								img="/img/disappointed-smile.png"
+								img="img/disappointed-smile.png"
 								title="Закладок нет :("
 								descr="Вы ничего не добавляли в закладки"
 								btnTitle="Вернуться назад"
