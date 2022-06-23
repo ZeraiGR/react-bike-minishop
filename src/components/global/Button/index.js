@@ -1,14 +1,24 @@
+import { Link } from 'react-router-dom';
 import styles from './Button.module.scss';
 
-const Button = () => {
+export const Button = ({title, iconPosition, onClick, type, hasIcon = true}) => {
 	return (
-		<button className={`${styles.button} button`} type="button">
-			<span>Оформить заказ</span>
-			<svg>
-				<use href="/img/sprite.svg#icon-arrow"></use>
-			</svg>
+		type === 'link' ? 
+		<Link className={`${styles.button} ${styles[iconPosition]} button`} to="/">
+			<span>{title}</span>
+			{ hasIcon && 
+				<svg>
+					<use href="/img/sprite.svg#icon-arrow"></use>
+				</svg>
+			}
+		</Link> :
+		<button className={`${styles.button} ${styles[iconPosition]} button`} type="button" onClick={onClick}>
+			<span>{title}</span>
+			{ hasIcon && 
+				<svg>
+					<use href="/img/sprite.svg#icon-arrow"></use>
+				</svg>
+			}
 		</button>
 	);
 };
-
-export default Button;

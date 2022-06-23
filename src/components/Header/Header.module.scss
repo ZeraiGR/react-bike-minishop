@@ -1,6 +1,10 @@
 .header {
 	margin-bottom: 45px;
 	border-bottom: 1px solid #eaeaea;
+
+	@media (max-width: 768px){
+		margin-bottom: 20px;
+	}
 }
 
 .nav {
@@ -8,4 +12,8 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
+	@media (max-width: 768px){
+		padding: 30px 20px;
+	}
 }

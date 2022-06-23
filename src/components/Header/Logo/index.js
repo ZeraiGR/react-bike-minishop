@@ -1,16 +1,15 @@
+import { Link } from 'react-router-dom'; 
 import styles from './Logo.module.scss';
 
-const Logo = () => {
+export const Logo = () => {
 	return (
-		<a className={styles.logo} href="#">
-			<img src="/img/logo.png" alt="logo" />
+		<Link className={styles.logo} to="/">
+			<img width={40} height={40} src="/img/logo.jpg" alt="logo" />
 			
 			<div className={styles.title}>
-				<strong>REACT SNEAKERS</strong>
-				<span>Магазин лучших кроссовок</span>
+				<strong>REACT BIKE</strong>
+				<span>Магазин велосипедов</span>
 			</div>
-		</a>
+		</Link>
 	);
 };
-
-export default Logo;

@@ -1,6 +1,9 @@
+import { Link } from 'react-router-dom';
 import styles from './Menu.module.scss';
 
-const Menu = ({onOpenDrawer}) => {
+export const Menu = ({onOpenDrawer, cartItems}) => {
+	const totalPrice = cartItems.reduce((sum, item) => sum + item.price, 0);
+
 	return (
 		<ul className={styles.menu}>
 			<li>
@@ -8,27 +11,25 @@ const Menu = ({onOpenDrawer}) => {
 					<svg className={styles.icon}>
 						<use href="/img/sprite.svg#icon-cart"></use>
 					</svg>
-					1205 руб.
+					{totalPrice + ' руб.'}
 				</button>
 			</li>
 			<li>
-				<a href="#">
+				<Link to="/favorite">
 					<svg className={styles.icon}>
 						<use href="/img/sprite.svg#icon-love"></use>
 					</svg>
 					<span className="sr-only">Избранное</span>
-				</a>
+				</Link>
 			</li>
 			<li>
-				<a href="#">
+				<Link to="/orders">
 					<svg className={styles.icon}>
 						<use href="/img/sprite.svg#icon-user"></use>
 					</svg>
 					<span className="sr-only">Профиль</span>
-				</a>
+				</Link>
 			</li>
 		</ul>
 	);
 };
-
-export default Menu;

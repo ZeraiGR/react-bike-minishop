@@ -22,4 +22,8 @@
 	span {
 		color: #9d9d9d;
 	}
+
+	@media (max-width: 525px){
+		display: none;
+	}
 }

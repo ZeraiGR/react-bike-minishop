@@ -1,6 +1,6 @@
 import styles from "./Cart.module.scss";
 
-const Cart = ({onCartRemove, title, imageUrl, price}) => {
+export const Cart = ({onCartRemove, title, imageUrl, price}) => {
 	return (
 		<article className={styles.cart}>
 			<img width={70} height={70} src={imageUrl} alt="Sneackers" />
@@ -22,5 +22,3 @@ const Cart = ({onCartRemove, title, imageUrl, price}) => {
 		</article>
 	);
 };
-
-export default Cart;

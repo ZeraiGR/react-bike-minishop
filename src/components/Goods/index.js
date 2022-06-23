@@ -1,40 +1,33 @@
-import SearchForm from "./SearchForm";
-import Card from "./Card";
+import { Card } from "./Card";
 import styles from './Goods.module.scss';
 
-const Goods = ({items, onCartStatus, onLikeStatus}) => {
-	
-	const addToCartBtnHandler = (id) => {
-		onCartStatus(id);
-	};
+export const Goods = ({items, cartItems, favoriteItems, onCartToggler, onLikeToggler, search, isItemsUpdate, updatingItem, isLoading}) => {
 
-	const likeCartBtnHandler = (id) => {
-		onLikeStatus(id);
+	const renderItems = () => {
+		const filteredItems = items.filter(item => item.title.toLowerCase().includes(search.toLowerCase()));
+
+		return (isLoading ? [...Array(12)] : filteredItems).map((cart, idx) => {
+					return (
+						<li key={cart?.globalId || idx}>
+							<Card 
+								onLikeToggler={() => onLikeToggler(cart)} 
+								onCartToggler={() => onCartToggler(cart)} 
+								isItemsUpdate={isItemsUpdate} 
+								isItemCartUpdate={cart?.globalId === updatingItem.id && updatingItem.action === 'cart'} 
+								isItemFavoriteUpdate={cart?.globalId === updatingItem.id && updatingItem.action === 'favorite'} 
+								isCart={cartItems.some(el => el.globalId === cart?.globalId)} isLiked={favoriteItems.some(el => el.globalId === cart?.globalId)}
+								isLoading={isLoading}
+								{...cart} 
+							/>
+						</li>
+					);
+				})
 	};
 
 	return (
-		<section className={styles.goods}>
-				<div className="container">
-					<div className={styles.top}>
-						<h1 className="title">Все кроссовки</h1>
-						<SearchForm />
-					</div>
-					
-					<ul className={styles.list}>
-						{
-							items.map((cart, idx) => {
-								return (
-									<li key={idx}>
-										<Card title={cart.title} imageUrl={cart.imageUrl} price={cart.price} isLiked={cart.isLiked} isCart={cart.isCart} onLikeStatus={() => likeCartBtnHandler(cart.id)} onCartStatus={() => addToCartBtnHandler(cart.id)} />
-									</li>
-								);
-							})
-						}
-					</ul>
-
-				</div>
-			</section>
+		<ul className={styles.list}>
+			{renderItems()}
+		</ul>
 	);
 };
 
-export default Goods;

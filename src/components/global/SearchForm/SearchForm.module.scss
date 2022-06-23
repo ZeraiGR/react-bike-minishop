@@ -1,0 +1,50 @@
+.form {
+	position: relative;
+
+	svg {
+		position: absolute;
+		left: 18px;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 14.25px;
+		height: 14.25px;
+	}
+}
+
+.search {
+	min-height: 45px;
+	border: 1px solid #F3F3F3;
+	border-radius: 10px;
+	padding-left: 45px;
+	padding-right: 10px;
+	outline: transparent;
+
+	&[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
+	&[type=text]::-ms-reveal {  display: none; width : 0; height: 0; }
+
+	&::-webkit-search-decoration,
+	&::-webkit-search-cancel-button,
+	&::-webkit-search-results-button,
+	&::-webkit-search-results-decoration { display: none; }
+
+	&:focus {
+		border-color: #fef0f0;
+	}
+}
+
+.btn {
+	position: absolute;
+	top: 50%;
+	right: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 30px;
+	height: 30px;
+	transform: translateY(-50%);
+
+	svg {
+		position: static;
+		transform: translateY(0) rotate(45deg);
+	}
+}

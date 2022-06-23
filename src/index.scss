@@ -25,7 +25,7 @@ body {
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-		background-color: #e7f6ff;
+		background-color: #f0e2d0;
 }
 
 input,
@@ -76,15 +76,27 @@ address {
     font-style: inherit;
 }
 
+#root {
+	border: 1px solid transparent;
+}
+
 .container {
 	margin: 0 auto;
 	padding: 0 60px;
 	width: 100%;
+
+	@media (max-width: 768px){
+		padding: 0 20px;
+	}
 }
 
 .title {
 	font-size: 32px;
 	font-weight: 700;
+
+	@media (max-width: 545px){
+		font-size: 24px;
+	}
 }
 
 .button {
@@ -122,5 +134,10 @@ address {
 	background-color: #ffffff;
 	border-radius: 20px;
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.04);
+
+	@media (max-width: 979px){
+		margin: 0;
+		border-radius: 0;
+	}
 }
 

@@ -5,6 +5,24 @@
 	align-items: center;
 	width: 100%;
 
+	&.left {
+		flex-direction: row-reverse;
+
+		svg {
+			transform: rotate(180deg);
+		}
+
+		&:hover {
+			svg {
+				transform:  translateX(-5px) rotate(180deg);
+			}
+		}
+	}
+
+	&.right {
+		flex-direction: row;
+	}
+
 	span {
 		flex-grow: 1;
 	}
