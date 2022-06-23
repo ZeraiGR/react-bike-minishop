@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-bike-minishop/static/css/main.95103c52.css",
-    "main.js": "/react-bike-minishop/static/js/main.03bb2924.js",
+    "main.js": "/react-bike-minishop/static/js/main.d938289c.js",
     "index.html": "/react-bike-minishop/index.html",
     "main.95103c52.css.map": "/react-bike-minishop/static/css/main.95103c52.css.map",
-    "main.03bb2924.js.map": "/react-bike-minishop/static/js/main.03bb2924.js.map"
+    "main.d938289c.js.map": "/react-bike-minishop/static/js/main.d938289c.js.map"
   },
   "entrypoints": [
     "static/css/main.95103c52.css",
-    "static/js/main.03bb2924.js"
+    "static/js/main.d938289c.js"
   ]
 }
